@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+
+        <style>
+            .active {
+                border: 5px solid red
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <img src="sofa1.jpg" data-id="2" data-name="sofa" onclick="callback(event, '1', 'sofa')">
+        <img src="lamp2.jpg" data-id="2" data-name="lamp" onclick="callback(event, '2', 'lamp')">
+
+        <script type="text/javascript">
+            function callback(e, id, name) {
+
+                var active_selector = document.querySelector('.active');
+
+                if (active_selector) {
+                    active_selector.classList.remove('active')
+                }
+
+                console.log('Name is ' + name + ' and ID is ' + id);
+                e.target.classList.add('active');
+
+                setTimeout(function () {
+
+                }, 500)
+
+            }
+        </script>
+
+    </body>
+</html>
